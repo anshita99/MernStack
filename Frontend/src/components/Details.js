@@ -10,7 +10,7 @@ const Details = () => {
     const [email,setEmail]=useState(location.state.datacheck.email);
     const [passsword,setPassword]=useState(location.state.datacheck.password);
     const [fullname,setFullName]=useState(location.state.datacheck.fullname);
-    const [category,setCategory]=useState(location.state.datacheck.category.category)
+    const [category,setCategory]=useState(location.state.datacheck.category)
     const [value, setValue] = useState({})
     const [_id,setId]=useState(location.state.datacheck._id)
     const handleChange = (key, value) => {

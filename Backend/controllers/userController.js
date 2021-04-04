@@ -55,7 +55,7 @@ const handleErrors = (err) => {
 }
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-    return jwt.sign({ id }, 'priyesh pandey auth', {
+    return jwt.sign({ id }, 'anshita garg auth', {
         expiresIn: maxAge
     });
 }
@@ -279,13 +279,13 @@ module.exports.forgot_password = async (req, res) => {
             user.expireToken= Date.now() + 3600000
             user.save()
             .then((result)=>{
-                transporter.sendMail(mailOptions, function (err, dta) {
-                    if (err) {
-                        console.log("Erro occurs", err)
-                    } else {
-                        console.log("Email sent!!")
-                    }
-                })
+                // transporter.sendMail(mailOptions, function (err, dta) {
+                //     if (err) {
+                //         console.log("Erro occurs", err)
+                //     } else {
+                //         console.log("Email sent!!")
+                //     }
+                // })
                 transporter.sendMail({
                     to: user.email,
                     from:"anshitagarg1999@gmail.com",
