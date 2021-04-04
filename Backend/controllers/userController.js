@@ -291,7 +291,7 @@ module.exports.forgot_password = async (req, res) => {
                     from:"anshitagarg1999@gmail.com",
                     subject:"Reset Password",
                     html: `<p>Hello user</p>
-                    <a href="http://localhost:3000/set-password/${token}">Click<a/>`
+                    <a href="http://localhost:3000/set-password/${token}">Click to change password<a/>`
                 })
                 res.json({message:"Check your email"})
             }).catch(err=>res.json({err}))

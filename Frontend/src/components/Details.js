@@ -62,7 +62,7 @@ const Details = () => {
     return (
         <div>
         <Navbar/>
-           <center><h1>Welcome Details of User</h1></center> 
+           <center><h1>Welcome to the User Details</h1></center> 
                <div >
                 {check ?<center>
                     <span><u>Full Name:</u></span>
