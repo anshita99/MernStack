@@ -12,7 +12,7 @@ const Navbar=()=>{
           }
     return(
         
-<nav class="navbar navbar-light bg-light d-flex justify-content-around">
+<nav class="navbar navbar-light bg-light d-flex justify-content-end">
   <a class="navbar-brand" href="#">
     <Link to="/login" className="btn btn-warning p-2">Login</Link><span> </span>
     
