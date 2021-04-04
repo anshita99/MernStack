@@ -11,14 +11,14 @@ const SetPassword = () => {
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        axios.post(`http://localhost:5000/new-password`,{value,token})
+        axios.post('http://localhost:5000/new-password',{value,token})
         .then(result=>{
             console.log(result)
         })
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-width ">
                 <label for="newpassword">newpassword</label>
                 <input type="text" name="newpassword"
                     value={value.fullname}
@@ -31,8 +31,10 @@ const SetPassword = () => {
                     value={value.email}
                     onChange={(e) => handleChange("confirmpassword", e.target.value)}
                     className="form-control"
-                />
+                /><br/>
+                <center>
                 <input type="submit"/>
+                </center>
             </form>
         </div>
     )
