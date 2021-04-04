@@ -27,7 +27,7 @@ const userShema = new mongoose.Schema({
     },
     category:{
         type:ObjectId,
-        required:[true,"Please Select Category"],
+        // required:[true,"Please Select Category"],
         ref:"Category"
     },
     active:{

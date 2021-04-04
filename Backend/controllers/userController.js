@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
     secure: true,
     auth: {
         user: "anshitagarg1999@gmail.com",
-        pass: "KiranArunGarg!!!"
+        pass: ""
     }
 });
 let mailOptions = {
@@ -291,7 +291,7 @@ module.exports.forgot_password = async (req, res) => {
                     from:"anshitagarg1999@gmail.com",
                     subject:"Reset Password",
                     html: `<p>Hello user</p>
-                    <a href="http://localhost:5000/set-password/${token}">Click<a/>`
+                    <a href="http://localhost:3000/set-password/${token}">Click<a/>`
                 })
                 res.json({message:"Check your email"})
             }).catch(err=>res.json({err}))
