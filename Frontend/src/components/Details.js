@@ -2,7 +2,7 @@ import React,{useState,useContext} from 'react'
 import { useLocation} from 'react-router-dom';
 import axios from 'axios';
 import Navbar from './Navbar';
-import {ApiContext} from './ApiContext'
+
 const Details = () => {
     let location=useLocation();
     const [check,setCheck]=useState(true);

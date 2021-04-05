@@ -45,7 +45,7 @@ const AdminControl = () => {
     }, [filter])
 
     useEffect(() => {
-        
+        // console.log("http://localhost:5000/all-details")
         const token = sessionStorage.getItem('auth-token');
 
         axios.get('http://localhost:5000/', token && {
@@ -55,12 +55,12 @@ const AdminControl = () => {
             },
         })
             .then(result => {
-                
+                // setValue(result.data);
                 console.log("Result", result)
             }).catch(err => {
                 console.log(err)
             })
-        
+        // console.log(data)
 
     }, [run, check, status, editupdate])
     const showAllData = () => {
@@ -74,7 +74,7 @@ const AdminControl = () => {
             },
         })
             .then(result => {
-                
+                  setValue(result.data);
                 console.log("Result", result)
             }).catch(err => {
                 console.log(err)
@@ -127,7 +127,7 @@ const AdminControl = () => {
     }
     const upDate = async (id) => {
         setEmailError("");
-       
+        // setPasswordError("");
         setFullNameError("");
         setCategoryError("")
         try {
