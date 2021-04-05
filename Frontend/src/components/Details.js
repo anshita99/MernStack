@@ -108,7 +108,7 @@ const Details = () => {
                     className="form-control"
                 />
                 <label for="fullname">Confirm Password</label>
-                <input type="text" name="confirmPassword"
+                <input type="password" name="confirmPassword"
                     value={value.confirmPassword}
                     onChange={(e) => handleChange("confirmPassword", e.target.value)}
                     className="form-control"
