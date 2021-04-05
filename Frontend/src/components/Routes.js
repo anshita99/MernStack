@@ -7,7 +7,7 @@ import Details from './Details';
 import AdminControl from './AdminControl';
 import PrivateRoute from './PrivateRoute';
 import Reset from './Reset'
-import SetPassword from './SetPassword'
+import SetPassword from './Set'
 
 const Routes = () => {
     return (
