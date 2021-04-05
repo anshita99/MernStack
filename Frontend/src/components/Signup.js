@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Nabar';
-import AddDataComp from './AddDataComp';
+import Navbar from './Navbar';
+import AddDataComp from './AddData';
 
 const Signup = () => {
 

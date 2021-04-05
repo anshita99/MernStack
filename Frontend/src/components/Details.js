@@ -1,7 +1,7 @@
 import React,{useState,useContext} from 'react'
 import { useLocation} from 'react-router-dom';
 import axios from 'axios';
-import Navbar from './Nabar';
+import Navbar from './Navbar';
 import {ApiContext} from './ApiContext'
 const Details = () => {
     let location=useLocation();
@@ -102,7 +102,7 @@ const Details = () => {
                     className="form-control"
                 />
                 <label for="fullname">Enter New Password</label>
-                <input type="text" name="newPassword"
+                <input type="password" name="newPassword"
                     value={value.newPassword}
                     onChange={(e) => handleChange("newPassword", e.target.value)}
                     className="form-control"

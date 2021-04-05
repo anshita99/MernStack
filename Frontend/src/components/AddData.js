@@ -32,7 +32,7 @@ const AddDataComp = ({heading,button}) => {
 
                     }
                 })
-            // console.log(res)
+            
         } catch (err) {
             if (err.response.data.err.hasOwnProperty("code") && err.response.data.err.code===11000)
             {
@@ -52,7 +52,7 @@ const AddDataComp = ({heading,button}) => {
                 setPasswordError(err.response.data.err.errors.password.message)
             }
         }
-            // console.log({ emailError: e.response.data.errors.email, passwrodError: e.response.data.errors.password })
+            
         }
 
     }

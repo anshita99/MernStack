@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from './Nabar';
+import Navbar from './Navbar';
 import Signup from './Signup';
-import AddDataComp from './AddDataComp';
+import AddDataComp from './AddData';
 
 
 const AdminControl = () => {
-    const [value, setValue] = useState([]);
+    const [value, setValue] = useState();
     const [run, setRun] = useState(true);
     const [check, setCheck] = useState(true)
     const [email, setEmail] = useState('');
@@ -24,10 +24,11 @@ const AdminControl = () => {
     const [editupdate, setEditUpdate] = useState(false);
     const [categoryid, setCategoryId] = useState("");
     const [emailError, setEmailError] = useState("")
-    // const [passwordError, setPasswordError] = useState("")
     const [fullnameError, setFullNameError] = useState("")
     const [categoryError, setCategoryError] = useState("")
     const [search,setSerach]=useState();
+    const location=useLocation();
+    console.log("This is the value from the admin Control page",location)
     useEffect(() => {
         const token = sessionStorage.getItem('auth-token');
         console.log("Value of filter", filter)
@@ -44,7 +45,7 @@ const AdminControl = () => {
     }, [filter])
 
     useEffect(() => {
-        // console.log("http://localhost:5000/all-details")
+        
         const token = sessionStorage.getItem('auth-token');
 
         axios.get('http://localhost:5000/', token && {
@@ -54,12 +55,12 @@ const AdminControl = () => {
             },
         })
             .then(result => {
-                setValue(() => setValue(result.data));
+                
                 console.log("Result", result)
             }).catch(err => {
                 console.log(err)
             })
-        // console.log(data)
+        
 
     }, [run, check, status, editupdate])
     const showAllData = () => {
@@ -73,7 +74,7 @@ const AdminControl = () => {
             },
         })
             .then(result => {
-                setValue(() => setValue(result.data));
+                
                 console.log("Result", result)
             }).catch(err => {
                 console.log(err)
@@ -126,7 +127,7 @@ const AdminControl = () => {
     }
     const upDate = async (id) => {
         setEmailError("");
-        // setPasswordError("");
+       
         setFullNameError("");
         setCategoryError("")
         try {
@@ -145,7 +146,7 @@ const AdminControl = () => {
             setEdit((prev) => !prev)
             setEditUpdate(!editupdate)
             setEmailError("");
-            // setPasswordError("");
+            
             setFullNameError("");
             setCategoryError("")
             const data1 = await res;
@@ -168,10 +169,7 @@ const AdminControl = () => {
 
                         setEmailError(err.response.data.err.errors.email.message)
                     }
-                    // if (err.response.data.err.errors.hasOwnProperty("password")) {
-
-                    //     setPasswordError(err.response.data.err.errors.password.message)
-                    // }
+                    
                 }
             }
         }
@@ -199,7 +197,7 @@ const AdminControl = () => {
                 },
             })
                 .then(result => {
-                    setValue(() => setValue(result.data));
+                    setValue(result.data);
                     console.log("Result", result)
                 }).catch(err => {
                     console.log(err)
